@@ -1,5 +1,8 @@
 package com.alyahyan
 
+import org.joda.time.*
+import org.jadira.usertype.dateandtime.joda.*
+
 class Emp {
 
     String     eno
@@ -10,8 +13,8 @@ class Emp {
 	BigDecimal orate
 	BigDecimal frate
 	Boolean	   vacation
-    Date       dateCreated
-    Date       lastUpdated
+    LocalDate  dateCreated
+    LocalDate  lastUpdated
 
     static constraints = {
     	eno unique:true, blank:false

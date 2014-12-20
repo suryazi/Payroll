@@ -1,13 +1,16 @@
 package com.alyahyan
 
+import org.joda.time.*
+import org.jadira.usertype.dateandtime.joda.*
+
 class Fri {
 
-    Date		mmyy //use YearMonth of jodatime
+    YearMonth	mmyy //use YearMonth of jodatime
 	BigDecimal	nod
     BigDecimal  frate
 	BigDecimal	famt
-	Date		dateCreated
-	Date 		lastUpdated
+	LocalDate	dateCreated
+	LocalDate	lastUpdated
 
     static constraints = {
     	emp blank:false, unique: 'mmyy'

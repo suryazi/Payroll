@@ -1,12 +1,17 @@
 package com.alyahyan
 
+import org.joda.time.*
+import org.jadira.usertype.dateandtime.joda.*
+
 class MonSal {
 
-    Date		mmyy //use YearMonth of jodatime
+    YearMonth	mmyy //use YearMonth of jodatime
 	BigDecimal 	sal
 	BigDecimal	loan
 	BigDecimal	ded
 	BigDecimal	net
+    LocalDate   dateCreated
+    LocalDate   lastUpdated
 
     static constraints = {
     	emp	 blank:false, unique:'mmyy'

@@ -1,13 +1,16 @@
 package com.alyahyan
 
+import org.joda.time.*
+import org.jadira.usertype.dateandtime.joda.*
+
 class Overtime {
 
-    Date		mmyy //use YearMonth of jodatime
+    YearMonth	mmyy //use YearMonth of jodatime
 	BigDecimal	hrs
     BigDecimal  otrate
 	BigDecimal	otamt
-	Date		dateCreated
-	Date 		lastUpdated
+	LocalDate	dateCreated
+	LocalDate 	lastUpdated
 
     static constraints = {
     	emp blank:false,unique:'mmyy'
