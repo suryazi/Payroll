@@ -5,7 +5,7 @@ import org.jadira.usertype.dateandtime.joda.*
 
 class Overtime {
 
-    YearMonth	mmyy //use YearMonth of jodatime
+    LocalDate	mmyy //use YearMonth of jodatime
 	BigDecimal	hrs
     BigDecimal  otrate
 	BigDecimal	otamt
