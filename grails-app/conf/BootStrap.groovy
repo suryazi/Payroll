@@ -9,13 +9,13 @@ class BootStrap {
 	def shiroSecurityService
 
     def init = { servletContext ->
-    	if(!User.findByUsername("admin")){
+    	if(!User.findByUsername("abusalman@alyahyan.com")){
             def adminRole = new Role(name: "Administrator")
             adminRole.addToPermissions("*:*")
             adminRole.save()
         
             def passwordSalt = new SecureRandomNumberGenerator().nextBytes().getBytes()
-            def admin = new User(username:"admin",passwordHash: new Sha512Hash("password",passwordSalt,1024).toBase64(),passwordSalt:passwordSalt)
+            def admin = new User(username:"abusalman@alyahyan.com",passwordHash: new Sha512Hash("thedarkman",passwordSalt,1024).toBase64(),passwordSalt:passwordSalt)
             admin.addToRoles(adminRole)
             admin.save()
         }

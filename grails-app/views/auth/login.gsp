@@ -17,12 +17,15 @@
       <form class="form-signin" action="signIn">
       <input type="hidden" name="targetUri" value="${targetUri}" />
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" name="username" value="${username}" class="input-block-level" placeholder="UserName">
-        <input type="password" name="password" value=""  class="input-block-level" placeholder="Password">
-        <label class="checkbox">
-          <input type="checkbox" name="rememberMe" value="${rememberMe}" > Remember me
-        </label>
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <input type="email" name="username" value="${username}" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="rememberMe" value="${rememberMe}"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
     </div> <!-- /container -->

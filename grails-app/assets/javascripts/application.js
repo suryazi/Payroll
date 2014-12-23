@@ -9,6 +9,7 @@
 //= require_tree .
 //= require_self
 //= require bootstrap
+//= win8-viewport-bug-workaround.js
 
 if (typeof jQuery !== 'undefined') {
 	(function($) {
