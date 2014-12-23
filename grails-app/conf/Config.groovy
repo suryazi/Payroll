@@ -115,7 +115,7 @@ log4j.main = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
-grails.plugins.twitterbootstrap.fixtaglib = true
+
 // Added by the Joda-Time plugin:
 grails.gorm.default.mapping = {
 	"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentDateMidnight, class: org.joda.time.DateMidnight
@@ -134,6 +134,7 @@ grails.gorm.default.mapping = {
 }
 jodatime.format.html5 = true
 
+grails.plugins.twitterbootstrap.fixtaglib = true
 //Bootstrap using less files
 grails.assets.less.compile = 'less4j'
 grails.assets.plugin."twitter-bootstrap".excludes = ["**/*.less"]
