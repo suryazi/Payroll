@@ -55,6 +55,7 @@
 	    <div class="container">
 	      <div class="starter-template">
 	       <g:layoutBody/>
+	       <div class="footer" role="contentinfo"></div>
 	       <g:applyLayout name="footer"/>
 	      </div>
 	    </div><!-- /.container -->
