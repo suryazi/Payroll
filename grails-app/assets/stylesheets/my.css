@@ -140,3 +140,11 @@ fieldset,
 .footer a {
 	color: #255b17;
 }
+
+.ln-ht {
+    line-height: 2;
+}
+
+.mrgn {
+	margin:10px;
+}
