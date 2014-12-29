@@ -22,7 +22,7 @@
 						</g:eachError>
 					</ul>
 				</g:hasErrors>
-				<form role="form" class="form-horizontal" role="form" action="save" method="post">
+				<form role="form" class="form-horizontal" action="save" method="post">
 					<fieldset class="form">
 						<g:render template="form"/>
 					</fieldset>

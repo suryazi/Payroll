@@ -3,134 +3,92 @@
 
 
 <div class="fieldcontain ${hasErrors(bean: empInstance, field: 'eno', 'error')} required">
-	<label for="eno">
-		<g:message code="emp.eno.label" default="Eno" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="eno" required="" value="${empInstance?.eno}"/>
+	<div class="form-group">
+		<label for="eno" class="col-sm-2 control-label">
+			<g:message code="emp.eno.label" default="Eno" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-sm-8">
+			<g:textField class="form-control input" id="eno" name="eno" required="" value="${empInstance?.eno}" placeholder="required"/>
+		</div>
+	</div>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empInstance, field: 'ename', 'error')} required">
-	<label for="ename">
-		<g:message code="emp.ename.label" default="Ename" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="ename" required="" value="${empInstance?.ename}"/>
+	<div class="form-group">
+		<label for="ename" class="col-sm-2 control-label">
+			<g:message code="emp.ename.label" default="Ename" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-sm-8">
+			<g:textField class="form-control input" id="ename" name="ename" required="" value="${empInstance?.ename}" placeholder="required"/>
+		</div>
+	</div>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empInstance, field: 'sal', 'error')} required">
-	<label for="sal">
-		<g:message code="emp.sal.label" default="Sal" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="number" name="sal" min="0.0" required="" value="${fieldValue(bean: empInstance, field: 'sal')}"/>
+	<div class="form-group">
+		<label for="sal" class="col-sm-2 control-label">
+			<g:message code="emp.sal.label" default="Sal" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-sm-8">
+			<g:field class="form-control input" type="number" id="sal" name="sal" min="0.0" required="" value="${empInstance?.sal}" placeholder="required"/>
+		</div>
+	</div>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empInstance, field: 'loan', 'error')} ">
-	<label for="loan">
-		<g:message code="emp.loan.label" default="Loan" />
-		
-	</label>
-	<g:field type="number" name="loan" min="0.0" value="${fieldValue(bean: empInstance, field: 'loan')}"/>
+	<div class="form-group">
+		<label for="loan" class="col-sm-2 control-label">
+			<g:message code="emp.loan.label" default="Loan" />
+		</label>
+		<div class="col-sm-8">
+			<g:field class="form-control input" id="loan" type="number" name="loan" min="0.0" value="${empInstance?.loan}"/>
+		</div>
+	</div>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empInstance, field: 'ded', 'error')} ">
-	<label for="ded">
-		<g:message code="emp.ded.label" default="Ded" />
-		
-	</label>
-	<g:field type="number" name="ded" min="0.0" value="${fieldValue(bean: empInstance, field: 'ded')}"/>
+	<div class="form-group">
+		<label for="ded" class="col-sm-2 control-label">
+			<g:message code="emp.ded.label" default="Ded" />
+		</label>
+		<div class="col-sm-8">
+			<g:field class="form-control input" id="ded" type="number" name="ded" min="0.0" value="${empInstance.ded}"/>
+		</div>
+	</div>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empInstance, field: 'orate', 'error')} ">
-	<label for="orate">
-		<g:message code="emp.orate.label" default="Orate" />
-		
-	</label>
-	<g:field type="number" name="orate" min="0.0" value="${fieldValue(bean: empInstance, field: 'orate')}"/>
+	<div class="form-group">
+		<label for="orate" class="col-sm-2 control-label">
+			<g:message code="emp.orate.label" default="Orate" />
+		</label>
+		<div class="col-sm-8">
+			<g:field class="form-control input" id="orate" type="number" name="orate" min="0.0" value="${empInstance.orate}"/>
+		</div>
+	</div>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empInstance, field: 'frate', 'error')} ">
-	<label for="frate">
-		<g:message code="emp.frate.label" default="Frate" />
-		
-	</label>
-	<g:field type="number" name="frate" min="0.0" value="${fieldValue(bean: empInstance, field: 'frate')}"/>
+	<div class="form-group">
+		<label for="frate" class="col-sm-2 control-label">
+			<g:message code="emp.frate.label" default="Frate" />
+		</label>
+		<div class="col-sm-8">
+			<g:field class="form-control input" id="frate" type="number" name="frate" min="0.0" value="${empInstance.frate}"/>
+		</div>
+	</div>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: empInstance, field: 'vacation', 'error')} ">
-	<label for="vacation">
-		<g:message code="emp.vacation.label" default="Vacation" />
-		
-	</label>
-	<g:checkBox name="vacation" value="${empInstance?.vacation}" />
+	<div class="form-group">
+		<label for="vacation" class="col-sm-2 control-label">
+			<g:message code="emp.vacation.label" default="Vacation" />
+		</label>
+		<div class="col-sm-1">
+			<g:checkBox class="form-control input" id="vacation" name="vacation" value="${empInstance?.vacation}" />
+		</div>
+	</div>
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: empInstance, field: 'absents', 'error')} ">
-	<label for="absents">
-		<g:message code="emp.absents.label" default="Absents" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${empInstance?.absents?}" var="a">
-    <li><g:link controller="absent" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="absent" action="create" params="['emp.id': empInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'absent.label', default: 'Absent')])}</g:link>
-</li>
-</ul>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: empInstance, field: 'fris', 'error')} ">
-	<label for="fris">
-		<g:message code="emp.fris.label" default="Fris" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${empInstance?.fris?}" var="f">
-    <li><g:link controller="fri" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="fri" action="create" params="['emp.id': empInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'fri.label', default: 'Fri')])}</g:link>
-</li>
-</ul>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: empInstance, field: 'monsals', 'error')} ">
-	<label for="monsals">
-		<g:message code="emp.monsals.label" default="Monsals" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${empInstance?.monsals?}" var="m">
-    <li><g:link controller="monSal" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="monSal" action="create" params="['emp.id': empInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'monSal.label', default: 'MonSal')])}</g:link>
-</li>
-</ul>
-
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: empInstance, field: 'overtiimes', 'error')} ">
-	<label for="overtiimes">
-		<g:message code="emp.overtiimes.label" default="Overtiimes" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${empInstance?.overtiimes?}" var="o">
-    <li><g:link controller="overtime" action="show" id="${o.id}">${o?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="overtime" action="create" params="['emp.id': empInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'overtime.label', default: 'Overtime')])}</g:link>
-</li>
-</ul>
-
-</div>
-
