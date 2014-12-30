@@ -17,12 +17,13 @@ class Absent {
     	mmyy blank:false
     	nod blank:false, min:0.0
     	fine nullable:true, min:0.0
+        tot blan:false, min:0.0
     }
 
     static belongsTo = [emp:Emp]
 
     static mapping = {
-        fine defaultValue: 0
+        fine defaultValue: 0.0
     	tot formula: 'nod + fine'
     }
 

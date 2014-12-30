@@ -19,4 +19,10 @@ if (typeof jQuery !== 'undefined') {
 			$(this).fadeOut();
 		});
 	})(jQuery);
-}
+};
+
+$(document).ready(function(){
+	if (!$('.chkval').val()) {
+		$('.chkval').val(0);
+	};
+});

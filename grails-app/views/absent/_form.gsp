@@ -21,7 +21,7 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<joda:datePicker name="mmyy" value="${absentInstance?.mmyy}" ></joda:datePicker>
+			<joda:datePicker id= "mmyy" name="mmyy" value="${absentInstance?.mmyy}" ></joda:datePicker>
 		</div>
 	</div>
 </div>
@@ -33,7 +33,7 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input" type="number" name="nod" min="0.0" required="" value="${fieldValue(bean: absentInstance, field: 'nod')}" placeholder="required"/>
+			<g:field class="form-control input" type="number" id="nod" name="nod" min="0.0" required="" value="${absentInstance?.nod}" placeholder="required"/>
 		</div>
 	</div>
 </div>
@@ -45,20 +45,7 @@
 			
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input" type="number" name="fine" min="0.0" value="${fieldValue(bean: absentInstance, field: 'fine')}"/>
+			<g:field class="form-control input chkval" type="number" id= "fine" name="fine" min="0.0" value="${absentInstance?.fine}"/>
 		</div>
 	</div>
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: absentInstance, field: 'tot', 'error')} required">
-	<div class="form-group">
-		<label for="tot" class="col-sm-2 control-label">
-			<g:message code="absent.tot.label" default="Tot" />
-			<span class="required-indicator">*</span>
-		</label>
-		<div class="col-sm-8">
-			<g:field class="form-control input" type="number" name="tot" required="" value="${fieldValue(bean: absentInstance, field: 'tot')}"/>
-		</div>
-	</div>
-</div>
-

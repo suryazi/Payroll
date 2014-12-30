@@ -34,7 +34,7 @@ class Emp {
         ded defaultValue:0
         orate defaultValue:0
         frate defaultValue:0
-        vacation defaultValue:true
+        vacation defaultValue:false
     }
 
     String toString(){
