@@ -3,42 +3,49 @@
 
 
 <div class="fieldcontain ${hasErrors(bean: overtimeInstance, field: 'emp', 'error')} required">
-	<label for="emp">
-		<g:message code="overtime.emp.label" default="Emp" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="emp" name="emp.id" from="${com.alyahyan.Emp.list()}" optionKey="id" required="" value="${overtimeInstance?.emp?.id}" class="many-to-one"/>
+	<div class="form-group">
+		<label for="emp" class="col-sm-2 control-label">
+			<g:message code="overtime.emp.label" default="Emp" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-sm-8">
+			<g:select class="form-control select many-to-one" id="emp" name="emp.id" from="${com.alyahyan.Emp.list()}" optionKey="id" required="" value="${overtimeInstance?.emp?.id}"/>
+		</div>
+	</div>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: overtimeInstance, field: 'mmyy', 'error')} required">
-	<label for="mmyy">
-		<g:message code="overtime.mmyy.label" default="Mmyy" />
-		<span class="required-indicator">*</span>
-	</label>
-	<joda:datePicker name="mmyy" value="${overtimeInstance?.mmyy}" ></joda:datePicker>
+	<div class="form-group">
+		<label for="mmyy" class="col-sm-2 control-label">
+			<g:message code="overtime.mmyy.label" default="Mmyy" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-sm-8">
+			<joda:datePicker name="mmyy" value="${overtimeInstance?.mmyy}" ></joda:datePicker>
+		</div>
+	</div>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: overtimeInstance, field: 'hrs', 'error')} required">
-	<label for="hrs">
-		<g:message code="overtime.hrs.label" default="Hrs" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="number" name="hrs" required="" value="${fieldValue(bean: overtimeInstance, field: 'hrs')}"/>
+	<div class="form-group">
+		<label for="hrs" class="col-sm-2 control-label">
+			<g:message code="overtime.hrs.label" default="Hrs" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-sm-8">
+			<g:field class="form-control input" type="number" id="hrs" name="hrs" min="0.0" required="" value="${overtimeInstance.hrs}"  placeholder="required"/>
+		</div>
+	</div>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: overtimeInstance, field: 'otrate', 'error')} required">
-	<label for="otrate">
-		<g:message code="overtime.otrate.label" default="Otrate" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="number" name="otrate" required="" value="${fieldValue(bean: overtimeInstance, field: 'otrate')}"/>
+	<div class="form-group">
+		<label for="otrate" class="col-sm-2 control-label">
+			<g:message code="overtime.otrate.label" default="Otrate" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-sm-8">
+			<g:field class="form-control input" type="number" id="otrate" name="otrate" min="0.0" required="" value="${overtimeInstance.otrate}" placeholder="required"/>
+		</div>
+	</div>
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: overtimeInstance, field: 'otamt', 'error')} required">
-	<label for="otamt">
-		<g:message code="overtime.otamt.label" default="Otamt" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="number" name="otamt" required="" value="${fieldValue(bean: overtimeInstance, field: 'otamt')}"/>
-</div>
-

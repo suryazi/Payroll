@@ -15,9 +15,9 @@ class Overtime {
     static constraints = {
     	emp blank:false,unique:'mmyy'
     	mmyy blank:false
-    	hrs blank:false
-        otrate blank:false
-    	otamt blank:false
+    	hrs blank:false, min:0.0
+        otrate blank:false, min:0.0
+    	otamt blank:false, min:0.0
     }
 
     static belongsTo = [emp:Emp]
