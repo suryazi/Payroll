@@ -15,9 +15,9 @@ class Fri {
     static constraints = {
     	emp blank:false, unique: 'mmyy'
     	mmyy blank:false
-    	nod blank:false
-        frate blank:false
-    	famt blank:false
+    	nod blank:false, min:0.0
+        frate blank:false, min:0.0
+    	famt blank:false, min:0.0
     }
 
     static belongsTo = [emp:Emp]

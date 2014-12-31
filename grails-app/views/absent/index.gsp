@@ -29,6 +29,8 @@
 						<g:sortableColumn property="nod" title="${message(code: 'absent.nod.label', default: 'Nod')}" />
 					
 						<g:sortableColumn property="fine" title="${message(code: 'absent.fine.label', default: 'Fine')}" />
+
+						<g:sortableColumn property="tot" title="${message(code: 'absent.tot.label', default: 'Total')}" />
 					
 						<g:sortableColumn property="dateCreated" title="${message(code: 'absent.dateCreated.label', default: 'Date Created')}" />
 					
@@ -47,6 +49,8 @@
 						<td>${fieldValue(bean: absentInstance, field: "nod")}</td>
 					
 						<td>${fieldValue(bean: absentInstance, field: "fine")}</td>
+
+						<td>${fieldValue(bean: absentInstance, field: "tot")}</td>
 					
 						<td>${fieldValue(bean: absentInstance, field: "dateCreated")}</td>
 					
