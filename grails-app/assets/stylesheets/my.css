@@ -226,3 +226,11 @@ fieldset.embedded {
 fieldset.embedded legend {
 	margin: 0 1em;
 }
+
+.nav-header{
+	cursor: default;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: italic;
+}

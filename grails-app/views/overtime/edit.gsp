@@ -5,6 +5,7 @@
 		<meta name="layout" content="bootstrap">
 		<g:set var="entityName" value="${message(code: 'overtime.label', default: 'Overtime')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
+		<jqui:resources />
 	</head>
 	<body>
 		<div class="col-sm-offset-2 col-sm-10">
