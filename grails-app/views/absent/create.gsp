@@ -4,6 +4,7 @@
 		<meta name="layout" content="bootstrap">
 		<g:set var="entityName" value="${message(code: 'absent.label', default: 'Absent')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<jqui:resources />
 	</head>
 	<body>
 		<div class="col-sm-offset-2 col-sm-10">

@@ -6,7 +6,7 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery
-//= require jquery-ui
+//= require jquery-ui/js/jquery-ui-1.10.3.custom.min
 //= require_tree .
 //= require_self
 //= require bootstrap
@@ -26,4 +26,6 @@ $(document).ready(function(){
 	if (!$('.chkval').val()) {
 		$('.chkval').val(0);
 	};
+
+	$("#mmyy").datepicker({dateFormat: 'yy-mm-dd'});
 });

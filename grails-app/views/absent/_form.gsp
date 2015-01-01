@@ -21,7 +21,7 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<joda:datePicker id= "mmyy" name="mmyy" value="${absentInstance?.mmyy}" ></joda:datePicker>
+			<g:textField class="form-control input" id="mmyy" name="mmyy" required="" value="${absentInstance?.mmyy}" placeholder="required"/>
 		</div>
 	</div>
 </div>
