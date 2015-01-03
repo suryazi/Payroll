@@ -33,7 +33,7 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input" type="number" id="sal" name="sal" min="0.0" required="" value="${empInstance?.sal}" placeholder="required"/>
+			<g:field class="form-control input" type="number" id="sal" name="sal" min="0.0" step="0.5" required="" value="${empInstance?.sal}" placeholder="required"/>
 		</div>
 	</div>
 </div>
@@ -44,7 +44,7 @@
 			<g:message code="emp.loan.label" default="Loan" />
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input chkval" id="loan" type="number" name="loan" min="0.0" value="${empInstance?.loan}"/>
+			<g:field class="form-control input chkval" id="loan" type="number" name="loan" min="0.0" step="0.5" value="${empInstance?.loan}"/>
 		</div>
 	</div>
 </div>
@@ -55,7 +55,7 @@
 			<g:message code="emp.ded.label" default="Ded" />
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input chkval" id="ded" type="number" name="ded" min="0.0" value="${empInstance.ded}"/>
+			<g:field class="form-control input chkval" id="ded" type="number" name="ded" min="0.0" step="0.5" value="${empInstance.ded}"/>
 		</div>
 	</div>
 </div>
@@ -66,7 +66,7 @@
 			<g:message code="emp.orate.label" default="Orate" />
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input chkval" id="orate" type="number" name="orate" min="0.0" value="${empInstance.orate}"/>
+			<g:field class="form-control input chkval" id="orate" type="number" name="orate" min="0.0" step="0.5" value="${empInstance.orate}"/>
 		</div>
 	</div>
 </div>
@@ -77,7 +77,7 @@
 			<g:message code="emp.frate.label" default="Frate" />
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input chkval" id="frate" type="number" name="frate" min="0.0" value="${empInstance.frate}"/>
+			<g:field class="form-control input chkval" id="frate" type="number" name="frate" min="0.0" step="0.5" value="${empInstance.frate}"/>
 		</div>
 	</div>
 </div>

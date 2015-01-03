@@ -33,7 +33,7 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input" type="number" id="nod" name="nod" min="0.0" required="" value="${friInstance.nod}" placeholder="required"/>
+			<g:field class="form-control input" type="number" id="nod" name="nod" min="0.0" step="0.5" required="" value="${friInstance.nod}" placeholder="required"/>
 		</div>
 	</div>
 </div>
@@ -45,7 +45,7 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input" type="number" id="frate" name="frate" min="0.0" required="" value="${friInstance.frate}" placeholder="required"/>
+			<g:field class="form-control input" type="number" id="frate" name="frate" min="0.0" step="0.5" required="" value="${friInstance.frate}" placeholder="required"/>
 		</div>
 	</div>
 </div>

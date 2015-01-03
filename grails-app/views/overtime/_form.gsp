@@ -33,7 +33,7 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input" type="number" id="hrs" name="hrs" min="0.0" required="" value="${overtimeInstance.hrs}"  placeholder="required"/>
+			<g:field class="form-control input" type="number" id="hrs" name="hrs" min="0.0" step="0.5" required="" value="${overtimeInstance.hrs}"  placeholder="required"/>
 		</div>
 	</div>
 </div>
@@ -45,7 +45,7 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:field class="form-control input" type="number" id="otrate" name="otrate" min="0.0" required="" value="${overtimeInstance.otrate}" placeholder="required"/>
+			<g:field class="form-control input" type="number" id="otrate" name="otrate" min="0.0" step="0.5" required="" value="${overtimeInstance.otrate}" placeholder="required"/>
 		</div>
 	</div>
 </div>
