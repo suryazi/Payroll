@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="main">
+		<meta name="layout" content="bootstrap">
 		<g:set var="entityName" value="${message(code: 'ded.label', default: 'Ded')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<jqui:resources />
 	</head>
 	<body>
-		<a href="#create-ded" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="create-ded" class="content scaffold-create" role="main">
+		<div class="col-sm-offset-2 col-sm-10">
 			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<g:hasErrors bean="${dedInstance}">
-			<ul class="errors" role="alert">
-				<g:eachError bean="${dedInstance}" var="error">
-				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-				</g:eachError>
-			</ul>
-			</g:hasErrors>
-			<g:form url="[resource:dedInstance, action:'save']" >
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
-			</g:form>
+		</div>
+		<g:render template="/templates/payroll/sidemenu" model="[active: 'create']"/>
+		<div class="col-md-6">
+			<div id="create-ded" class="content scaffold-create" role="main">
+				<g:if test="${flash.message}">
+				<div class="message" role="status">${flash.message}</div>
+				</g:if>
+				<g:hasErrors bean="${dedInstance}">
+				<ul class="errors" role="alert">
+					<g:eachError bean="${dedInstance}" var="error">
+					<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+					</g:eachError>
+				</ul>
+				</g:hasErrors>
+				<form role="form" class="form-horizontal" action="save" method="post">
+					<fieldset class="form">
+						<g:render template="form"/>
+					</fieldset>
+					<fieldset class="buttons">
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-primary">
+									<g:message code="default.button.create.label" default="Create" />
+								</button>
+                                <g:link class="list" action="index" class="btn btn-warning">
+                                        <g:message code="default.button.cancel.label" default="Cancel" />
+                                </g:link>
+                            </div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>
