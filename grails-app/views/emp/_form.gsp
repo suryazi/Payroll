@@ -38,28 +38,6 @@
 	</div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: empInstance, field: 'loan', 'error')} ">
-	<div class="form-group">
-		<label for="loan" class="col-sm-2 control-label">
-			<g:message code="emp.loan.label" default="Loan" />
-		</label>
-		<div class="col-sm-8">
-			<g:field class="form-control input chkval" id="loan" type="number" name="loan" min="0.0" step="0.5" value="${empInstance?.loan}"/>
-		</div>
-	</div>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: empInstance, field: 'ded', 'error')} ">
-	<div class="form-group">
-		<label for="ded" class="col-sm-2 control-label">
-			<g:message code="emp.ded.label" default="Ded" />
-		</label>
-		<div class="col-sm-8">
-			<g:field class="form-control input chkval" id="ded" type="number" name="ded" min="0.0" step="0.5" value="${empInstance.ded}"/>
-		</div>
-	</div>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: empInstance, field: 'orate', 'error')} ">
 	<div class="form-group">
 		<label for="orate" class="col-sm-2 control-label">

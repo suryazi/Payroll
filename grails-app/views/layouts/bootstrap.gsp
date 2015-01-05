@@ -28,6 +28,8 @@
 			            	<li><g:link controller="overtime">Overtime</g:link></li>
 			            	<li><g:link controller="fri">Friday</g:link></li>
 			            	<li><g:link controller="absent">Absent</g:link></li>
+			            	<li><g:link controller="loan">Loan</g:link></li>
+			            	<li><g:link controller="ded">Deductions</g:link></li>
 			          	</ul>
 		          </li>
 		          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Salary<b class="caret"></b></a>

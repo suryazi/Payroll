@@ -30,5 +30,4 @@ class Absent {
     String toString(){
     	"${emp} - ${mmyy}"
     }
-    
 }

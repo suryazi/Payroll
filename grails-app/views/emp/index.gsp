@@ -28,12 +28,11 @@
 					
 						<g:sortableColumn property="sal" title="${message(code: 'emp.sal.label', default: 'Sal')}" />
 					
-						<g:sortableColumn property="loan" title="${message(code: 'emp.loan.label', default: 'Loan')}" />
-					
-						<g:sortableColumn property="ded" title="${message(code: 'emp.ded.label', default: 'Ded')}" />
-					
 						<g:sortableColumn property="orate" title="${message(code: 'emp.orate.label', default: 'Orate')}" />
 					
+						<g:sortableColumn property="frate" title="${message(code: 'emp.frate.label', default: 'Frate')}" />
+
+						<g:sortableColumn property="vacation" title="${message(code: 'emp.vacation.label', default: 'Vacation')}" />
 					</tr>
 				</thead>
 				<tbody>
@@ -46,12 +45,11 @@
 					
 						<td>${fieldValue(bean: empInstance, field: "sal")}</td>
 					
-						<td>${fieldValue(bean: empInstance, field: "loan")}</td>
-					
-						<td>${fieldValue(bean: empInstance, field: "ded")}</td>
-					
 						<td>${fieldValue(bean: empInstance, field: "orate")}</td>
 					
+						<td>${fieldValue(bean: empInstance, field: "frate")}</td>
+
+						<td>${fieldValue(bean: empInstance, field: "vacation")}</td>
 					</tr>
 				</g:each>
 				</tbody>
