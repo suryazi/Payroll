@@ -17,6 +17,8 @@ class Emp {
     static constraints = {
     	eno unique:true, blank:false
     	ename blank:false
+        div blank:false
+        sec blank:false
     	sal min:0.0, blank:false
     	orate min:0.0, nullable:true
     	frate min:0.0, nullable:true
@@ -24,6 +26,8 @@ class Emp {
     }
 
     static hasMany = [fris:Fri, overtimes:Overtime, absents:Absent, monsals:MonSal, loan:Loan, ded:Ded]
+
+    static belongsTo = [div:Div, sec:Sec]
 
     static mapping ={
         orate defaultValue:0
