@@ -27,7 +27,16 @@
 						<g:render template="form"/>
 					</fieldset>
 					<fieldset class="buttons">
-						<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-primary">
+									<g:message code="default.button.create.label" default="Create" />
+								</button>
+                                <g:link class="list" action="index" class="btn btn-warning">
+                                        <g:message code="default.button.cancel.label" default="Cancel" />
+                                </g:link>
+                            </div>
+						</div>
 					</fieldset>
 				</form>
 			</div>

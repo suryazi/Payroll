@@ -10,7 +10,7 @@ class Sec {
 	LocalDate	lastUpdated
 
     static constraints = {
-    	secname blank:false, unique:true
+    	secname blank:false, unique:'div'
     	div blank:false
     }
 

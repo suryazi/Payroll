@@ -25,6 +25,10 @@
 						<g:sortableColumn property="eno" title="${message(code: 'emp.eno.label', default: 'Eno')}" />
 					
 						<g:sortableColumn property="ename" title="${message(code: 'emp.ename.label', default: 'Ename')}" />
+
+						<g:sortableColumn property="div" title="${message(code: 'emp.div.label', default: 'Div')}" />
+
+						<g:sortableColumn property="sec" title="${message(code: 'emp.sec.label', default: 'Sec')}" />
 					
 						<g:sortableColumn property="sal" title="${message(code: 'emp.sal.label', default: 'Sal')}" />
 					
@@ -42,6 +46,10 @@
 						<td><g:link action="show" id="${empInstance.id}">${fieldValue(bean: empInstance, field: "eno")}</g:link></td>
 					
 						<td>${fieldValue(bean: empInstance, field: "ename")}</td>
+
+						<td>${fieldValue(bean: empInstance, field: "div")}</td>
+
+						<td>${fieldValue(bean: empInstance, field: "sec")}</td>
 					
 						<td>${fieldValue(bean: empInstance, field: "sal")}</td>
 					

@@ -35,7 +35,27 @@
 							<span class="property-value" aria-labelledby="ename-label"><g:fieldValue bean="${empInstance}" field="ename"/></span>
 					</dd>
 					</g:if>
-				
+
+					<g:if test="${empInstance?.div}">
+					<dt class="col-sm-2 ln-ht">
+						<span id="div-label" class="property-label"><g:message code="emp.div.label" default="Div" /></span>
+					</dt>
+					<dd class="col-sm-10 ln-ht">
+							<span class="property-value" aria-labelledby="div-label"><g:link controller="div" action="show" id="${empInstance?.div?.id}">${empInstance?.div?.encodeAsHTML()}</g:link></span>
+						
+					</dd>
+					</g:if>
+
+					<g:if test="${empInstance?.sec}">
+					<dt class="col-sm-2 ln-ht">
+						<span id="sec-label" class="property-label"><g:message code="emp.sec.label" default="Sec" /></span>
+					</dt>
+					<dd class="col-sm-10 ln-ht">
+							<span class="property-value" aria-labelledby="sec-label"><g:link controller="sec" action="show" id="${empInstance?.sec?.id}">${empInstance?.sec?.encodeAsHTML()}</g:link></span>
+						
+					</dd>
+					</g:if>
+
 					<g:if test="${empInstance?.sal}">
 					<dt class="col-sm-2 ln-ht">
 						<span id="sal-label" class="property-label"><g:message code="emp.sal.label" default="Sal" /></span>

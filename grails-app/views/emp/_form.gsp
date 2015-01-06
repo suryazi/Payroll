@@ -26,6 +26,30 @@
 	</div>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: empInstance, field: 'div', 'error')} required">
+	<div class="form-group">
+		<label for="div" class="col-sm-2 control-label">
+			<g:message code="emp.div.label" default="Division" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-sm-8">
+			<g:select class="form-control select many-to-one" id="div" name="div.id" from="${com.alyahyan.Div.list()}" optionKey="id" required="" value="${divInstance?.div?.id}"/>
+		</div>
+	</div>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: empInstance, field: 'sec', 'error')} required">
+	<div class="form-group">
+		<label for="sec" class="col-sm-2 control-label">
+			<g:message code="emp.sec.label" default="Section" />
+			<span class="required-indicator">*</span>
+		</label>
+		<div class="col-sm-8">
+			<g:select class="form-control select many-to-one" id="sec" name="sec.id" from="${com.alyahyan.Sec.list()}" optionKey="id" required="" value="${secInstance?.sec?.id}"/>
+		</div>
+	</div>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: empInstance, field: 'sal', 'error')} required">
 	<div class="form-group">
 		<label for="sal" class="col-sm-2 control-label">
