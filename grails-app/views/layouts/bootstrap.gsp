@@ -24,7 +24,9 @@
 	          <ul class="nav navbar-nav">
 		            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Data<b class="caret"></b></a>
 			            <ul class="dropdown-menu">
-			            	<li><g:link controller="emp">Employee Info</g:link></li>
+			            	<li><g:link controller="div">Division</g:link></li>
+			            	<li><g:link controller="sec">Section</g:link></li>
+			            	<li><g:link controller="emp">Employee</g:link></li>
 			            	<li><g:link controller="overtime">Overtime</g:link></li>
 			            	<li><g:link controller="fri">Friday</g:link></li>
 			            	<li><g:link controller="absent">Absent</g:link></li>
