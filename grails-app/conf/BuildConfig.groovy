@@ -40,6 +40,7 @@ grails.project.dependency.resolution = {
         mavenLocal()
         grailsCentral()
         mavenCentral()
+        mavenRepo "http://repo.grails.org/grails/core"
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
@@ -73,6 +74,9 @@ grails.project.dependency.resolution = {
         runtime ':twitter-bootstrap:3.3.1'
         compile ":joda-time:1.5"
         compile ":jquery-ui:1.10.4"
+        compile ":easygrid:1.6.9"
+        compile ":export:1.6"
+        compile ":google-visualization:1.0.1"
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
