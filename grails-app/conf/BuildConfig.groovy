@@ -62,7 +62,7 @@ grails.project.dependency.resolution = {
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
-        compile ":asset-pipeline:2.0.19"
+        compile ":asset-pipeline:2.1.1"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.6.1" // or ":hibernate:3.6.10.18"
@@ -71,12 +71,12 @@ grails.project.dependency.resolution = {
 
         //plugins Added by me
         compile ":shiro:1.2.1"
-        runtime ':twitter-bootstrap:3.3.1'
+        runtime ':twitter-bootstrap:3.3.2.1'
         compile ":joda-time:1.5"
         compile ":jquery-ui:1.10.4"
-        compile ":easygrid:1.6.9"
+        compile ":easygrid:1.7.0"
         compile ":export:1.6"
-        compile ":google-visualization:1.0.1"
+        //compile ":google-visualization:1.0.1"
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"

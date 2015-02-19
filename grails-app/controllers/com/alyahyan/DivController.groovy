@@ -4,11 +4,37 @@ package com.alyahyan
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import org.grails.plugin.easygrid.Easygrid
+import org.springframework.dao.DataIntegrityViolationException
 
 @Transactional(readOnly = true)
+@Easygrid
 class DivController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+     def divJQGrid = {
+        domainClass Div
+        gridImpl 'jqgrid'
+        jqgrid{
+            sortname 'divname'
+        }
+        export {
+            export_title 'Division'
+            pdf{
+                'border.color' java.awt.Color.BLUE
+            }
+        }
+        columns {
+            id {
+                type 'id'
+            }
+            divname
+            version {
+                type 'version'
+            }
+        }
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -21,6 +47,9 @@ class DivController {
 
     def create() {
         respond new Div(params)
+    }
+
+    def grid() {
     }
 
     @Transactional

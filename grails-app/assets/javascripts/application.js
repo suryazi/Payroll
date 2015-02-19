@@ -19,13 +19,9 @@ if (typeof jQuery !== 'undefined') {
 		}).ajaxStop(function() {
 			$(this).fadeOut();
 		});
+
+		if (!$('.chkval').val()) {
+			$('.chkval').val(0);
+		};
 	})(jQuery);
 };
-
-$(document).ready(function(){
-	if (!$('.chkval').val()) {
-		$('.chkval').val(0);
-	};
-
-	$("#mmyy").datepicker({dateFormat: 'yy-mm-dd'});
-});
