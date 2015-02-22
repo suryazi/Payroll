@@ -10,6 +10,33 @@ class AbsentController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def absentJQGrid = {
+        domainClass Absent
+        gridImpl 'jqgrid'
+        jqgrid{
+            sortname 'emp'
+        }
+        export {
+            export_title 'Absent'
+            pdf{
+                'border.color' java.awt.Color.BLUE
+            }
+        }
+        columns {
+            id {
+                type 'id'
+            }
+            emp
+            mmyy
+            nod
+            fine
+            tot
+            version {
+                type 'version'
+            }
+        }
+    }
+
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond Absent.list(params), model:[absentInstanceCount: Absent.count()]
@@ -21,6 +48,9 @@ class AbsentController {
 
     def create() {
         respond new Absent(params)
+    }
+
+    def grid(){
     }
 
     @Transactional

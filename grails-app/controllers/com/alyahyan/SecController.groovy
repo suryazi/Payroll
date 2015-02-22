@@ -4,11 +4,39 @@ package com.alyahyan
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import org.grails.plugin.easygrid.Easygrid
 
 @Transactional(readOnly = true)
+@Easygrid
 class SecController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+    def secJQGrid = {
+        domainClass Sec
+        gridImpl 'jqgrid'
+        jqgrid{
+            sortname 'secname'
+        }
+        export {
+            export_title 'Section'
+            pdf{
+                'border.color' java.awt.Color.BLUE
+            }
+        }
+        columns {
+            id {
+                type 'id'
+            }
+            div{
+                type 'id'
+            }
+            secname
+            version {
+                type 'version'
+            }
+        }
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -21,6 +49,9 @@ class SecController {
 
     def create() {
         respond new Sec(params)
+    }
+
+    def grid(){
     }
 
     @Transactional

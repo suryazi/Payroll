@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="layout" content="bootstrap">
+		<g:set var="entityName" value="${message(code: 'absent.label', default: 'Absent')}" />
+		<title><g:message code="default.grid.label" args="[entityName]" /></title>
+		<asset:stylesheet src="easygrid.jqgrid.css"/>
+		<asset:javascript src="easygrid.jqgrid.js"/>
+	</head>
+	<body>
+		<asset:script type="text/javascript">
+			function linkShowIdFormat(cellvalue, options, rowObject){
+				//format the id cell value to new format so that it will show the corresponding details.
+				return "<a href='/payroll/absent/show/" + cellvalue + "'>" + cellvalue + "</a> ";
+			}
+
+			function idUnFormat(cellvalue, options){
+				return cellvalue;
+			}
+		</asset:script>
+		<div class="col-sm-offset-2 col-sm-10">
+			<h1><g:message code="default.grid.label" args="[entityName]" /></h1>
+		</div>
+		<g:render template="/templates/payroll/sidemenu" model="[active: 'grid']"/>
+		<div class="col-md-10 row-fluid">
+			<div id="grid-div" class="content scaffold-grid" role="main">
+
+				<g:if test="${flash.message}">
+					<div class="message" role="status">${flash.message}</div>
+				</g:if>
+
+				<grid:grid id='jqgridinitial' name='absentJQ'>
+				    <grid:set  width="900" caption="${g.message(code:'default.grid.label', args:[entityName])}"/>
+				    <grid:set col="id" formatter='f:linkShowIdFormat' unformat="f:idUnFormat"/>
+				</grid:grid>
+
+				<grid:exportButton name='absentJQ'/>
+
+			</div>
+		</div>
+		<asset:deferredScripts/>
+	</body>
+</html>
