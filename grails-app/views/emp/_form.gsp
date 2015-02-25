@@ -33,7 +33,10 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:select class="form-control select many-to-one" id="div" name="div.id" from="${com.alyahyan.Div.list()}" optionKey="id" required="" value="${divInstance?.div?.id}"/>
+			<grid:selection class="form-control input" id="div" title="Select Division"
+	            gridName="divSelection" controller="div"
+	            name="div.id" value="${empInstance?.div?.id}"
+	            showSeparateLabel="false"    />
 		</div>
 	</div>
 </div>
@@ -45,7 +48,10 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:select class="form-control select many-to-one" id="sec" name="sec.id" from="${com.alyahyan.Sec.list()}" optionKey="id" required="" value="${secInstance?.sec?.id}"/>
+			<grid:selection class="form-control input" id="sec" title="Select Section"
+	            gridName="secSelection" controller="sec"
+	            name="sec.id" value="${empInstance?.sec?.id}"
+	            showSeparateLabel="false"    />
 		</div>
 	</div>
 </div>

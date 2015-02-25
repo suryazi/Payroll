@@ -1,7 +1,5 @@
 <%@ page import="com.alyahyan.Sec" %>
 
-
-
 <div class="fieldcontain ${hasErrors(bean: secInstance, field: 'secname', 'error')} required">
 	<div class="form-group">
 		<label for="emp" class="col-sm-2 control-label">
@@ -21,8 +19,10 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:select class="form-control select many-to-one" id="div" name="div.id" from="${com.alyahyan.Div.list()}" optionKey="id" required="" value="${secInstance?.div?.id}"/>
+			<grid:selection class="form-control input" id="div" title="Select Division"
+	            gridName="divSelection" controller="div"
+	            name="div.id" value="${secInstance?.div?.id}"
+	            showSeparateLabel="false"    />
 		</div>
 	</div>
 </div>
-

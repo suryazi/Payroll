@@ -14,6 +14,11 @@
 				return "<a href='/payroll/sec/show/" + cellvalue + "'>" + cellvalue + "</a> ";
 			}
 
+			function linkShowDivIdFormat(cellvalue, options, rowObject){
+				//format the id cell value to new format so that it will show the corresponding details.
+				return "<a href='/payroll/div/show/" + cellvalue + "'>" + cellvalue + "</a> ";
+			}
+
 			function idUnFormat(cellvalue, options){
 				return cellvalue;
 			}
@@ -32,6 +37,7 @@
 				<grid:grid id='jqgridinitial' name='secJQ'>
 				    <grid:set  width="900" caption="${g.message(code:'default.grid.label', args:[entityName])}"/>
 				    <grid:set col="id" formatter='f:linkShowIdFormat' unformat="f:idUnFormat"/>
+				    <grid:set col="div" formatter='f:linkShowDivIdFormat' unformat="f:idUnFormat"/>
 				</grid:grid>
 
 				<grid:exportButton name='secJQ'/>

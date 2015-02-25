@@ -12,6 +12,36 @@ class SecController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def secSelectionGrid={
+        domainClass Sec
+        gridImpl 'jqgrid'
+        inlineEdit false
+        jqgrid{
+            width '900'
+        }
+        columns{
+            id{
+                type 'id'
+            }
+            div
+            secname
+        }
+        autocomplete{
+            idProp 'id'
+            labelValue{val, params ->
+                "${val.secname}"
+            }
+            textBoxFilterClosure{
+                ilike('secname',"${params.term}%")
+            }
+            constraintsFilterClosure { params ->
+                if (params.div) {
+                    eq('div', params.div)
+                }
+            }
+        }
+    }
+
     def secJQGrid = {
         domainClass Sec
         gridImpl 'jqgrid'
@@ -28,9 +58,7 @@ class SecController {
             id {
                 type 'id'
             }
-            div{
-                type 'id'
-            }
+            div.divname
             secname
             version {
                 type 'version'

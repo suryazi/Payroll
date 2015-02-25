@@ -3,6 +3,7 @@ package com.alyahyan
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import org.grails.plugin.easygrid.Easygrid
+import org.grails.plugin.easygrid.Filter
 import org.springframework.dao.DataIntegrityViolationException
 
 @Transactional(readOnly = true)
@@ -10,6 +11,30 @@ import org.springframework.dao.DataIntegrityViolationException
 class DivController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+    def divSelectionGrid={
+        domainClass Div
+        gridImpl 'jqgrid'
+        inlineEdit false
+        jqgrid{
+            width '900'
+        }
+        columns{
+            id{
+                type 'id'
+            }
+            divname
+        }
+        autocomplete{
+            idProp 'id'
+            labelValue{val, params ->
+                "${val.divname}"
+            }
+            textBoxFilterClosure{
+                ilike('divname',"${params.term}%")
+            }
+        }
+    }
 
      def divJQGrid = {
         domainClass Div
