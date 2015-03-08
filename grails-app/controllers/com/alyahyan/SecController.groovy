@@ -5,6 +5,7 @@ package com.alyahyan
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import org.grails.plugin.easygrid.Easygrid
+import org.grails.plugin.easygrid.Filter
 
 @Transactional(readOnly = true)
 @Easygrid
@@ -23,7 +24,9 @@ class SecController {
             id{
                 type 'id'
             }
-            div
+            div{
+                type 'id'
+            }
             secname
         }
         autocomplete{
@@ -58,7 +61,9 @@ class SecController {
             id {
                 type 'id'
             }
-            div.divname
+            div{
+                type 'id'
+            }
             secname
             version {
                 type 'version'
@@ -79,7 +84,7 @@ class SecController {
         respond new Sec(params)
     }
 
-    def grid(){
+    def grid() {
     }
 
     @Transactional

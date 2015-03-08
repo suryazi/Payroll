@@ -13,6 +13,41 @@ class EmpController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def empSelectionGrid={
+        domainClass Emp
+        gridImpl 'jqgrid'
+        inlineEdit false
+        jqgrid{
+            width '900'
+        }
+        columns{
+            id{
+                type 'id'
+            }
+            eno
+            ename
+            div{
+                type 'id'
+            }
+            sec{
+                type 'id'
+            }
+            sal
+            orate
+            frate
+            vacation
+        }
+        autocomplete{
+            idProp 'id'
+            labelValue{val, params ->
+                "${val.ename}"
+            }
+            textBoxFilterClosure{
+                ilike('ename',"${params.term}%")
+            }
+        }
+    }
+
     def empJQGrid = {
         domainClass Emp
         gridImpl 'jqgrid'
@@ -32,7 +67,13 @@ class EmpController {
             eno
             ename
             div
+            {
+                type 'id'
+            }
             sec
+            {
+                type 'id'
+            }
             sal
             orate
             frate

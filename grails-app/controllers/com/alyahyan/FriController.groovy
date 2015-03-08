@@ -4,11 +4,44 @@ package com.alyahyan
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import org.grails.plugin.easygrid.Easygrid
+import org.grails.plugin.easygrid.Filter
+
 
 @Transactional(readOnly = true)
+@Easygrid
 class FriController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+    def friJQGrid = {
+        domainClass Fri
+        gridImpl 'jqgrid'
+        jqgrid {
+            sortname 'emp'
+        }
+        export {
+            export_title 'Friday'
+            pdf {
+                'border.color' java.awt.Color.BLUE
+            }
+        }
+        columns {
+            id {
+                type 'id'
+            }
+            emp {
+                type 'id'
+            }
+            mmyy
+            nod
+            frate
+            famt
+            version {
+                type 'version'
+            }
+        }
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -23,6 +56,10 @@ class FriController {
         respond new Fri(params)
     }
 
+    def grid() {
+        
+    }
+
     @Transactional
     def save(Fri friInstance) {
         if (friInstance == null) {
@@ -34,6 +71,10 @@ class FriController {
             respond friInstance.errors, view:'create'
             return
         }
+
+        def foundEmp = Emp.get(friInstance?.emp?.id)
+
+        friInstance.frate = foundEmp.frate
 
         friInstance.save flush:true
 

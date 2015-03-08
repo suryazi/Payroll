@@ -5,7 +5,7 @@ import org.jadira.usertype.dateandtime.joda.*
 
 class Fri {
 
-    LocalDate	mmyy //use YearMonth of jodatime
+    String	mmyy //use YearMonth of jodatime
 	BigDecimal	nod
     BigDecimal  frate
 	BigDecimal	famt
@@ -16,8 +16,8 @@ class Fri {
     	emp blank:false, unique: 'mmyy'
     	mmyy blank:false
     	nod blank:false, min:0.0
-        frate blank:false, min:0.0
-    	famt blank:false, min:0.0
+        frate nullable:true, min:0.0
+    	famt nullable:true, min:0.0
     }
 
     static belongsTo = [emp:Emp]
