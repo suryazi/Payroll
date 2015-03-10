@@ -4,11 +4,44 @@ package com.alyahyan
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import org.grails.plugin.easygrid.Easygrid
+import org.grails.plugin.easygrid.Filter
 
 @Transactional(readOnly = true)
+@Easygrid
 class DedController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+    def dedJQGrid = {
+        domainClass Ded
+        gridImpl 'jqgrid'
+        jqgrid {
+            sortname 'emp'
+        }
+        export {
+            export_title 'Deduction'
+            pdf {
+                'border.color' java.awt.Color.BLUE
+            }
+        }
+        columns {
+            id {
+                type 'id'
+            }
+            emp {
+                type 'id'
+            }
+            loan {
+                type 'id'
+            }
+            mmyy
+            dedamt
+            version {
+                type 'version'
+            }
+        }
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -21,6 +54,10 @@ class DedController {
 
     def create() {
         respond new Ded(params)
+    }
+
+    def grid() {
+
     }
 
     @Transactional

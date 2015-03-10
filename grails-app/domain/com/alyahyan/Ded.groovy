@@ -5,7 +5,7 @@ import org.jadira.usertype.dateandtime.joda.*
 
 class Ded {
 
-	LocalDate	mmyy
+	String	mmyy
 	BigDecimal	dedamt
 	LocalDate	dateCreated
 	LocalDate	lastUpdated

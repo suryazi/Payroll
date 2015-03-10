@@ -9,7 +9,10 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:select class="form-control select many-to-one" id="emp" name="emp.id" from="${com.alyahyan.Emp.list()}" optionKey="id" required="" value="${absentInstance?.emp?.id}"/>
+			<grid:selection class="form-control input" id="emp" title="Select Employee"
+	            gridName="empSelection" controller="emp"
+	            name="emp.id" value="${absentInstance?.emp?.id}"
+	            showSeparateLabel="false"    />
 		</div>
 	</div>
 </div>

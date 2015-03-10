@@ -4,6 +4,8 @@
 		<meta name="layout" content="bootstrap">
 		<g:set var="entityName" value="${message(code: 'ded.label', default: 'Ded')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<asset:javascript src="easygrid.selection.js"/>
+		<asset:stylesheet src="easygrid.jqgrid.css"/>
 		<jqui:resources />
 	</head>
 	<body>

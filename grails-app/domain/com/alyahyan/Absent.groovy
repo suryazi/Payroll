@@ -5,7 +5,7 @@ import org.jadira.usertype.dateandtime.joda.*
 
 class Absent {
 
-    LocalDate	mmyy //use YearMonth of jodatime
+    String	mmyy //use YearMonth of jodatime
 	BigDecimal	nod
 	BigDecimal	fine
     BigDecimal  tot

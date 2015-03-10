@@ -9,7 +9,10 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:select class="form-control select many-to-one" id="emp" name="emp.id" from="${com.alyahyan.Emp.list()}" optionKey="id" required="" value="${dedInstance?.emp?.id}"/>
+			<grid:selection class="form-control input" id="emp" title="Select Employee"
+	            gridName="empSelection" controller="emp"
+	            name="emp.id" value="${dedInstance?.emp?.id}"
+	            showSeparateLabel="false"    />
 		</div>
 	</div>
 </div>
@@ -21,7 +24,10 @@
 			<span class="required-indicator">*</span>
 		</label>
 		<div class="col-sm-8">
-			<g:select class="form-control select many-to-one" id="loan" name="loan.id" from="${com.alyahyan.Loan.list()}" optionKey="id" required="" value="${dedInstance?.loan?.id}"/>
+			<grid:selection class="form-control input" id="loan" title="Select Loan"
+	            gridName="loanSelection" controller="loan"
+	            name="loan.id" value="${dedInstance?.emp?.id}"
+	            showSeparateLabel="false"    />
 		</div>
 </div>
 

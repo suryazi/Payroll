@@ -5,7 +5,7 @@ import org.jadira.usertype.dateandtime.joda.*
 
 class Loan {
 
-	LocalDate	mmyy
+	String	mmyy
 	BigDecimal loan
 	BigDecimal rem
 	BigDecimal ded
@@ -18,7 +18,7 @@ class Loan {
     	mmyy blank:false
     	loan blank:false, min:0.0
     	ded blank:false, min:0.0
-    	rem (blank:false, min:0.0, validator:{val, obj ->
+    	rem (nullable:true, min:0.0, validator:{val, obj ->
     			return val <= obj.loan
     	})
     	noded nullable:true

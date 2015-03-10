@@ -4,8 +4,11 @@ package com.alyahyan
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import org.grails.plugin.easygrid.Easygrid
+import org.grails.plugin.easygrid.Filter
 
 @Transactional(readOnly = true)
+@Easygrid
 class AbsentController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -26,7 +29,9 @@ class AbsentController {
             id {
                 type 'id'
             }
-            emp
+            emp {
+                type 'id'
+            }
             mmyy
             nod
             fine

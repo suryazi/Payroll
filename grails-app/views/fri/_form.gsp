@@ -11,7 +11,7 @@
 		<div class="col-sm-8">
 			<grid:selection class="form-control input" id="emp" title="Select Employee"
 	            gridName="empSelection" controller="emp"
-	            name="emp.id" value="${overtimeInstance?.emp?.id}"
+	            name="emp.id" value="${friInstance?.emp?.id}"
 	            showSeparateLabel="false"    />
 		</div>
 	</div>

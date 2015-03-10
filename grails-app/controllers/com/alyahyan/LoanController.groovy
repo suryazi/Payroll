@@ -4,11 +4,76 @@ package com.alyahyan
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import org.grails.plugin.easygrid.Easygrid
+import org.grails.plugin.easygrid.Filter
 
 @Transactional(readOnly = true)
+@Easygrid
 class LoanController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+    def loanSelectionGrid={
+        domainClass Loan
+        gridImpl 'jqgrid'
+        inlineEdit false
+        jqgrid{
+            width '900'
+        }
+        columns{
+            id{
+                type 'id'
+            }
+            emp {
+                type 'id'
+            }
+            mmyy
+            loan
+            rem
+            ded
+            noded
+        }
+        autocomplete{
+            idProp 'id'
+            labelValue{val, params ->
+                "${val.mmyy}"
+            }
+            textBoxFilterClosure{
+                ilike('mmyy',"${params.term}%")
+            }
+        }
+    }
+
+
+    def loanJQGrid = {
+        domainClass Loan
+        gridImpl 'jqgrid'
+        jqgrid {
+            sortname 'emp'
+        }
+        export {
+            export_title 'Loan'
+            pdf {
+                'border.color' java.awt.Color.BLUE
+            }
+        }
+        columns {
+            id {
+                type 'id'
+            }
+            emp {
+                type 'id'
+            }
+            mmyy
+            loan
+            rem
+            ded
+            noded
+            version {
+                type 'version'
+            }
+        }
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -23,6 +88,10 @@ class LoanController {
         respond new Loan(params)
     }
 
+    def grid() {
+        
+    }
+
     @Transactional
     def save(Loan loanInstance) {
         if (loanInstance == null) {
@@ -34,6 +103,8 @@ class LoanController {
             respond loanInstance.errors, view:'create'
             return
         }
+
+        loanInstance.rem = loanInstance.loan
 
         loanInstance.save flush:true
 

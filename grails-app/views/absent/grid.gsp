@@ -14,6 +14,11 @@
 				return "<a href='/payroll/absent/show/" + cellvalue + "'>" + cellvalue + "</a> ";
 			}
 
+			function linkShowEmpIdFormat(cellvalue, options, rowObject){
+				//format the id cell value to new format so that it will show the corresponding details.
+				return "<a href='/payroll/emp/show/" + cellvalue + "'>" + cellvalue + "</a> ";
+			}
+
 			function idUnFormat(cellvalue, options){
 				return cellvalue;
 			}
